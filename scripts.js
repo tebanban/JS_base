@@ -69,11 +69,11 @@ function setFood (){
 const selectColor = document.getElementById('selectColor')
 const allHtml = document.querySelector('html')
 
-function upDate(bgColor,textColor){
+function upDateColor(bgColor,textColor){
     allHtml.style.backgroundColor =  bgColor
     allHtml.style.color = textColor
 }
 
-selectColor.addEventListener('change', ()=> selectColor.value === 'black' ? upDate('black', 'white') : upDate('white' , 'black'));
+selectColor.addEventListener('change', ()=> selectColor.value === 'black' ? upDateColor('black', 'white') : upDateColor('white' , 'black'));
 
 
