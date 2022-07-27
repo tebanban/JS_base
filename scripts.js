@@ -20,28 +20,51 @@ function upDate(e) {
 
 
 //Use of conditional if else
-const select= document.getElementById('weather')
-const pResponse = document.getElementById('pSelect');
+const selectWeather= document.getElementById('weather')
+const pWeather = document.getElementById('pWeather');
 
-select.addEventListener('change', setWeather);
+selectWeather.addEventListener('change', setWeather);
 
 function setWeather (){
-    const choice = select.value;
+    const choice = selectWeather.value;
 
     if (choice === 'sunny'){
-        pResponse.textContent= "Use of sunglasses is welcome"
+        pWeather.innerText= "Use of sunglasses is welcome"
     }
    else if( choice === 'rainy'){
-    pResponse.textContent= "Bring your umbrella"
+    pWeather.textContent= "Bring your umbrella"
    }
    else if( choice === 'overcast'){
-    pResponse.textContent = 'No need for sunblock'
+    pWeather.textContent = 'No need for sunblock'
    }
    else {
-    pResponse.textContent='';
+    pWeather.textContent='';
    }
 }
  
+//Use of conditional Switch
+const selectFood= document.getElementById('food')
+const pFood = document.getElementById('pFood')
+selectFood.addEventListener('change', setMeal)
+
+function setMeal (){
+    const choice = selectFood.value;
+
+    switch (choice) {
+        case 'soup':
+             pFood.innerText= "Spicy azteca tomato soup with avocado";
+             break;
+        case 'sandwich':
+            pFood.textContent= "Toasted meat sandwich with chipotle sauce";
+            break;
+        case 'pizza':
+            pFood.textContent = 'Cheese and peperoni special pizza'
+            break;
+        default:
+            pFood.textContent = ''  ;  
+            break;
+    }
+}
 
 
 
