@@ -43,31 +43,37 @@ function setWeather (){
 }
  
 //Use of conditional Switch
-const selectFood= document.getElementById('food')
+const selectFood = document.getElementById('food')
 const pFood = document.getElementById('pFood')
-selectFood.addEventListener('change', setMeal)
 
-function setMeal (){
-    const choice = selectFood.value;
+selectFood.addEventListener('change', setFood)
 
-    switch (choice) {
+function setFood (){
+    const choice= selectFood.value
+    switch(choice){
         case 'soup':
-             pFood.innerText= "Spicy azteca tomato soup with avocado";
-             break;
+            pFood.textContent='Azteca spicy tomato soup'
+            break;
         case 'sandwich':
-            pFood.textContent= "Toasted meat sandwich with chipotle sauce";
-            break;
+            pFood.textContent='Toasted meat sandwich with'
+            break;    
         case 'pizza':
-            pFood.textContent = 'Cheese and peperoni special pizza'
-            break;
+            pFood.textContent='Cheese and peperoni pizza'
+            break;    
         default:
-            pFood.textContent = ''  ;  
-            break;
+            pFood.textContent=''
     }
 }
 
+//Use of ternary operator
+const selectColor = document.getElementById('selectColor')
+const allHtml = document.querySelector('html')
 
+function upDate(bgColor,textColor){
+    allHtml.style.backgroundColor =  bgColor
+    allHtml.style.color = textColor
+}
 
-
+selectColor.addEventListener('change', ()=> selectColor.value === 'black' ? upDate('black', 'white') : upDate('white' , 'black'));
 
 
